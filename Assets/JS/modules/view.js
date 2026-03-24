@@ -6,6 +6,8 @@ export function renderApp() {
       <h1>Sticky Notes</h1>
       <button class="add-note-btn">+ Ny Note</button>
     </header>
+
+    <section class="notes-grid"></section>
   </section>
 `;
 }
