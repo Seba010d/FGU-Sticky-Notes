@@ -26,3 +26,46 @@ export function renderNotes(notes) {
     grid.appendChild(note);
   });
 }
+
+export function openConfirmBox(message, onConfirm) {
+  const backdrop = document.createElement("div");
+  backdrop.className = "backdrop";
+
+  const box = document.createElement("div");
+  box.className = "confirm-box";
+
+  const text = document.createElement("p");
+  text.textContent = message;
+
+  const buttonGroup = document.createElement("div");
+  buttonGroup.className = "confirm-actions";
+
+  const yesButton = document.createElement("button");
+  yesButton.className = "confirm-yes-btn";
+  yesButton.textContent = "Ja";
+
+  const noButton = document.createElement("button");
+  noButton.className = "confirm-no-btn";
+  noButton.textContent = "Nej";
+
+  yesButton.addEventListener("click", () => {
+    onConfirm();
+    backdrop.remove();
+    box.remove();
+  });
+
+  noButton.addEventListener("click", () => {
+    backdrop.remove();
+    box.remove();
+  });
+
+  backdrop.addEventListener("click", () => {
+    backdrop.remove();
+    box.remove();
+  });
+
+  buttonGroup.append(yesButton, noButton);
+  box.append(text, buttonGroup);
+
+  document.body.append(backdrop, box);
+}

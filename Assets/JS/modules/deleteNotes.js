@@ -1,5 +1,5 @@
 import { saveData } from "./localStorage.js";
-import { renderNotes } from "./view.js";
+import { openConfirmBox, renderNotes } from "./view.js";
 
 export function initDeleteNotes(notes) {
   const grid = document.querySelector(".notes-grid");
@@ -10,12 +10,14 @@ export function initDeleteNotes(notes) {
     }
 
     const id = Number(event.target.dataset.id);
-    const filteredNotes = notes.filter((note) => note.id !== id);
+    openConfirmBox("Er du sikker på, at du vil slette denne note?", () => {
+      const filteredNotes = notes.filter((note) => note.id !== id);
 
-    notes.length = 0;
-    notes.push(...filteredNotes);
+      notes.length = 0;
+      notes.push(...filteredNotes);
 
-    saveData(notes);
-    renderNotes(notes);
+      saveData(notes);
+      renderNotes(notes);
+    });
   });
 }
