@@ -11,3 +11,17 @@ export function renderApp() {
   </section>
 `;
 }
+
+export function renderNotes(notes) {
+  const grid = document.querySelector(".notes-grid");
+  grid.innerHTML = "";
+
+  notes.forEach((noteData) => {
+    const note = document.createElement("article");
+    note.className = "note";
+    note.innerHTML = `
+      <textarea data-id="${noteData.id}" placeholder="Skriv noget...">${noteData.text}</textarea>
+    `;
+    grid.appendChild(note);
+  });
+}

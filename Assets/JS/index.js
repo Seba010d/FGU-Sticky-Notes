@@ -1,4 +1,12 @@
-import { saveData, loadData } from "./modules/localStorage.js";
-import { renderApp } from "./modules/view.js";
+import { initAddNotes } from "./modules/AddNotes.js";
+import { loadData } from "./modules/localStorage.js";
+import { initUpdateNotes } from "./modules/updateNotes.js";
+import { renderApp, renderNotes } from "./modules/view.js";
 
 renderApp();
+
+let notes = loadData() || [];
+
+renderNotes(notes);
+initAddNotes(notes);
+initUpdateNotes(notes);
