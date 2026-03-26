@@ -20,6 +20,7 @@ export function renderNotes(notes) {
     const note = document.createElement("article");
     note.className = "note";
     note.innerHTML = `
+      <button class="delete-note-btn" data-id="${noteData.id}">x</button>
       <textarea data-id="${noteData.id}" placeholder="Skriv noget...">${noteData.text}</textarea>
     `;
     grid.appendChild(note);
