@@ -1,2 +1,8 @@
-// @use "reset";
+@use "reset";
+@use "variables" as *;
 @use "confirmBox";
+@use "Header";
+
+body {
+  background-color: $clr-bg-page;
+}

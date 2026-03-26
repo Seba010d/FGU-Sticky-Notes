@@ -1,0 +1,28 @@
+@use "variables" as *;
+
+.notes-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $clr-white;
+  box-shadow: $shadow-soft;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 30px 20px;
+
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .add-note-btn {
+    position: absolute;
+    right: 18px;
+    border: none;
+    background-color: $clr-yellow-btn;
+    border-radius: $btn-radius;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+}
