@@ -19,10 +19,18 @@ export function renderNotes(notes) {
   notes.forEach((noteData) => {
     const note = document.createElement("article");
     note.className = "note";
-    note.innerHTML = `
-      <button class="delete-note-btn" data-id="${noteData.id}">x</button>
-      <textarea data-id="${noteData.id}" placeholder="Skriv noget...">${noteData.text}</textarea>
-    `;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "delete-note-btn";
+    deleteButton.dataset.id = noteData.id;
+    deleteButton.textContent = "x";
+
+    const textarea = document.createElement("textarea");
+    textarea.dataset.id = noteData.id;
+    textarea.placeholder = "Skriv noget...";
+    textarea.value = noteData.text;
+
+    note.append(deleteButton, textarea);
     grid.appendChild(note);
   });
 }

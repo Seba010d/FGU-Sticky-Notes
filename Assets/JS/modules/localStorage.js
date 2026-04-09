@@ -12,5 +12,10 @@ export function loadData() {
     return null;
   }
 
-  return JSON.parse(data);
+  try {
+    return JSON.parse(data);
+  } catch (error) {
+    console.warn("Kunne ikke læse data fra localStorage.", error);
+    return null;
+  }
 }
