@@ -2,7 +2,9 @@
 @use "variables" as *;
 @use "confirmBox";
 @use "Header";
+@use "notes";
 
 body {
   background-color: $clr-bg-page;
+  font-family: Arial, Helvetica, sans-serif;
 }
