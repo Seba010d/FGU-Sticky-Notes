@@ -20,21 +20,23 @@
   overflow: hidden;
 }
 
-.note:nth-child(4n + 1) {
-  background-color: $clr-note-blue;
-}
+// ---------- Coloring Notes ----------
 
-.note:nth-child(4n + 2) {
-  background-color: $clr-note-green;
-}
+// .note:nth-child(4n + 1) {
+//   background-color: $clr-note-blue;
+// }
 
-.note:nth-child(4n + 3) {
-  background-color: $clr-note-yellow;
-}
+// .note:nth-child(4n + 2) {
+//   background-color: $clr-note-green;
+// }
 
-.note:nth-child(4n + 4) {
-  background-color: $clr-note-pink;
-}
+// .note:nth-child(4n + 3) {
+//   background-color: $clr-note-yellow;
+// }
+
+// .note:nth-child(4n + 4) {
+//   background-color: $clr-note-pink;
+// }
 
 .delete-note-btn {
   position: absolute;

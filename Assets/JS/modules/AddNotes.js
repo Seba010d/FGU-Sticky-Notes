@@ -3,16 +3,16 @@ import { renderNotes } from "./view.js";
 
 export function initAddNotes(notes) {
   const button = document.querySelector(".add-note-btn");
+  const noteColor = ["#bfdbfe", "#bbf7d0", "#fde68a", "#fbcfe8"];
 
   button.addEventListener("click", () => {
-    const nextId =
-      notes.length === 0
-        ? 0
-        : Math.max(...notes.map((note) => note.id)) + 1;
+    const randomColor = noteColor[Math.floor(Math.random() * noteColor.length)];
+    const nextId = notes.length === 0 ? 0 : Math.max(...notes.map((note) => note.id)) + 1;
 
     const newNote = {
       id: nextId,
       text: "",
+      color: randomColor,
     };
 
     notes.push(newNote);

@@ -19,6 +19,7 @@ export function renderNotes(notes) {
   notes.forEach((noteData) => {
     const note = document.createElement("article");
     note.className = "note";
+    note.style.backgroundColor = noteData.color;
 
     const deleteButton = document.createElement("button");
     deleteButton.className = "delete-note-btn";
